@@ -2,29 +2,20 @@ version: 1.3.13
 
 cache: true
 
-# Απενεργοποίηση Agents και Assistants από το μενού
-interface:
-  agents:
-    use: false
-    create: false
-  modelSelect: true
-
-# Ορισμός ΜΟΝΟ του δικού σου Custom Endpoint
 endpoints:
-  custom:
-    - name: "MyAPI World"
-      apiKey: "${MYAPI_KEY}"
-      baseURL: "https://api.myapi.world/v1"
-      models:
-        default:
-          - "GPT-5.6-Terra"
-          - "GPT-5.6-Luna"
-          - "GPT-5.6-SOL"
-          - "Opus 5"
-          - "GPT-5.5"
-          - "Sonnet 5"
-          - "Fable 5"
-        fetch: false
-      titleConvo: true
-      titleModel: "GPT-5.5"
-      modelDisplayLabel: "MyAPI World"
+  openAI:
+    apiKey: "${OPENAI_API_KEY}"
+    baseURL: "https://api.myapi.world/v1"
+    models:
+      default:
+        - "GPT-5.6-Terra"
+        - "GPT-5.6-Luna"
+        - "GPT-5.6-SOL"
+        - "Opus 5"
+        - "GPT-5.5"
+        - "Sonnet 5"
+        - "Fable 5"
+      fetch: false
+    titleConvo: true
+    titleModel: "GPT-5.5"
+    modelDisplayLabel: "MyAPI World"
