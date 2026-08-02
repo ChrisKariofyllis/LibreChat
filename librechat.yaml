@@ -3,10 +3,17 @@ version: 1.3.13
 cache: true
 
 endpoints:
+  # Απενεργοποίηση όλων των προεπιλεγμένων παρόχων
+  openAI: null
+  google: null
+  anthropic: null
+  gptPlugins: null
+
+  # Μόνο ο δικός σου πάροχος
   custom:
     - name: "MyAPI World"
       apiKey: "${MYAPI_KEY}"
-      baseURL: "https://api.myapi.world/v1" # Αν το API σου δεν χρειάζεται το /v1 στο τέλος, αφαίρεσέ το
+      baseURL: "https://api.myapi.world/v1"
       models:
         default:
           - "GPT-5.6-Terra"
@@ -16,7 +23,7 @@ endpoints:
           - "GPT-5.5"
           - "Sonnet 5"
           - "Fable 5"
-        fetch: false # Βάζουμε false για να μην προσπαθεί να φέρει άλλα μοντέλα και να φαίνονται ΜΟΝΟ αυτά
+        fetch: false # Εμποδίζει τη λήψη της τεράστιας λίστας από το API
       titleConvo: true
       titleModel: "GPT-5.5"
       modelDisplayLabel: "MyAPI World"
