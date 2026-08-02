@@ -2,14 +2,15 @@ version: 1.3.13
 
 cache: true
 
-endpoints:
-  # Απενεργοποίηση όλων των προεπιλεγμένων παρόχων
-  openAI: null
-  google: null
-  anthropic: null
-  gptPlugins: null
+# Απενεργοποίηση Agents και Assistants από το μενού
+interface:
+  agents:
+    use: false
+    create: false
+  modelSelect: true
 
-  # Μόνο ο δικός σου πάροχος
+# Ορισμός ΜΟΝΟ του δικού σου Custom Endpoint
+endpoints:
   custom:
     - name: "MyAPI World"
       apiKey: "${MYAPI_KEY}"
@@ -23,7 +24,7 @@ endpoints:
           - "GPT-5.5"
           - "Sonnet 5"
           - "Fable 5"
-        fetch: false # Εμποδίζει τη λήψη της τεράστιας λίστας από το API
+        fetch: false
       titleConvo: true
       titleModel: "GPT-5.5"
       modelDisplayLabel: "MyAPI World"
